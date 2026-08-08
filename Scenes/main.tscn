@@ -2,15 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://dw1avvjwfwc3r" path="res://Scenes/player.tscn" id="1_jjgbg"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_npjmm"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bsd35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsd35"]
 
 [node name="Main" type="Node2D" unique_id=1247104383]
 
 [node name="Player" parent="." unique_id=1960748812 instance=ExtResource("1_jjgbg")]
 position = Vector2(366, 263)
+runSpeed = 500.0
+jumpForce = -800.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2116424984]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=206861753]
+position = Vector2(2.000002, -16)
+scale = Vector2(11.477752, 1.8872597)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=338039280]
-position = Vector2(363, 595)
-shape = SubResource("WorldBoundaryShape2D_npjmm")
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1260482706]
+position = Vector2(0, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=794498417]
+shape = SubResource("WorldBoundaryShape2D_bsd35")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=158158113]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(0.51999986, 0.51999986)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=346807327]
+scale = Vector2(5.12392, 60.61048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1225147813]
+shape = SubResource("RectangleShape2D_bsd35")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=920616058]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(0.51999986, 0.51999986)

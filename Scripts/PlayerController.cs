@@ -3,10 +3,25 @@ using System;
 
 public partial class PlayerController : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	[Export]
+	public float walkSpeed = 300.0f;
 
-	public override void _PhysicsProcess(double delta)
+    [Export(PropertyHint.Range, "0.0,1.0")]
+    public float deceleration = 0.05f;
+
+    [Export(PropertyHint.Range, "0.0,1.0")]
+    public float acceleration = 0.05f;
+
+	[Export]
+    public float runSpeed = 700.0f;
+
+	[Export]
+    public float jumpForce = -400.0f;
+
+    [Export(PropertyHint.Range, "0.0,1.0")]
+    public float decelerateOnJumpRelease = 0.5f;
+
+    public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 
@@ -17,21 +32,36 @@ public partial class PlayerController : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump") && (IsOnFloor() || IsOnWall()))
 		{
-			velocity.Y = JumpVelocity;
+			velocity.Y = jumpForce;
 		}
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
+		// Jump force based on hold time of space
+		if (Input.IsActionJustReleased("jump") && velocity.Y < 0)
 		{
-			velocity.X = direction.X * Speed;
+			velocity.Y *= decelerateOnJumpRelease;
+		}
+        //Speed handling
+        float speed;
+		if (Input.IsActionPressed("run"))
+		{
+			speed = runSpeed;
 		}
 		else
+		{ 
+			speed = walkSpeed;
+		}
+			// Get the input direction and handle the movement/deceleration.
+			// As good practice, you should replace UI actions with custom gameplay actions.
+			Vector2 direction = Input.GetVector("left", "right", "up", "down");
+		if (direction != Vector2.Zero)
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+            velocity.X = Mathf.MoveToward(Velocity.X, direction.X * speed, speed * acceleration);
+        }
+		else
+		{
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, walkSpeed * deceleration);
 		}
 
 		Velocity = velocity;
