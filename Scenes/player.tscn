@@ -1,19 +1,101 @@
 [gd_scene format=3 uid="uid://dw1avvjwfwc3r"]
 
 [ext_resource type="Script" uid="uid://c4ofbtgn03k5j" path="res://Scripts/PlayerController.cs" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bry6srpf33sra" path="res://Assets/dkvlbur-885c64b5-7dd3-4d9c-a363-ee42eb4e5cc6.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://ifs5clj04qlf" path="res://Assets/Meshy_AI_Crimson_Titan_0816011859_texture.fbx" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://i7jt5b5t7ff6" path="res://Assets/Meshy_AI_Crimson_Titan_0816011859_texture_obj/Meshy_AI_Crimson_Titan_0816011859_texture_obj/Meshy_AI_Crimson_Titan_0816011859_texture.png" id="3_6t5aa"]
+[ext_resource type="Animation" uid="uid://c8k1d7j8vrodj" path="res://Assets/Animations/IronManAnims/Walking.res" id="4_x3wgy"]
+[ext_resource type="Animation" uid="uid://b0g4jvd1sxqfw" path="res://Assets/Animations/IronManAnims/idle.res" id="5_3smsa"]
+[ext_resource type="Animation" uid="uid://jpo2eo2t4upl" path="res://Assets/Animations/IronManAnims/jump.res" id="6_8erm5"]
+[ext_resource type="Animation" uid="uid://boivjn1araqfb" path="res://Assets/Animations/IronManAnims/run.res" id="6_f1ek2"]
+[ext_resource type="Animation" uid="uid://lifoljpcrd4k" path="res://Assets/Animations/IronManAnims/standardRun.res" id="7_tx1dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npjmm"]
-size = Vector2(10, 20)
+size = Vector2(11.447975, 16.677296)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkybt"]
+albedo_texture = ExtResource("3_6t5aa")
+metallic = 1.0
+roughness = 0.36
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f1ek2"]
+_data = {
+&"idle": ExtResource("5_3smsa"),
+&"jump": ExtResource("6_8erm5"),
+&"run": ExtResource("6_f1ek2"),
+&"sprint": ExtResource("7_tx1dd"),
+&"walk": ExtResource("4_x3wgy")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=1960748812]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=364395235]
+position = Vector2(4.999998, 14.00001)
 scale = Vector2(14.150976, 14.150976)
 shape = SubResource("RectangleShape2D_npjmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1157385733]
-scale = Vector2(0.14150977, 0.14150977)
-texture = ExtResource("2_6t5aa")
+position = Vector2(7.6293945e-06, 1.9999924)
+scale = Vector2(0.5082549, 0.5082549)
+texture = SubResource("ViewportTexture_6t5aa")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1506984726]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=92992546]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.08030335, 0.05, -0.0002593994)
+doppler_tracking = 1
+projection = 1
+current = true
+size = 0.1
+far = 0.24
+
+[node name="Meshy_AI_Crimson_Titan_0816011859_texture2" parent="SubViewport" unique_id=822488023 instance=ExtResource("2_cvnsp")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="SubViewport/Meshy_AI_Crimson_Titan_0816011859_texture2" index="0" unique_id=684251025]
+bones/0/position = Vector3(-3.2412994e-05, 0.010776795, -6.2020496e-05)
+bones/0/rotation = Quaternion(-0.036944535, -0.36652833, -0.012122938, 0.92959404)
+bones/1/rotation = Quaternion(-0.03420166, 0.040321574, -0.0064448006, 0.9985805)
+bones/2/rotation = Quaternion(0.100634485, 0.08298582, -0.0046177744, 0.9914458)
+bones/3/rotation = Quaternion(0.10063446, 0.082985796, -0.004617755, 0.9914458)
+bones/4/rotation = Quaternion(0.04716658, -0.011243773, 0.0012329594, 0.99882305)
+bones/5/rotation = Quaternion(-0.054468933, 0.17692322, -0.01297054, 0.98263067)
+bones/7/rotation = Quaternion(-0.5682877, -0.42012352, 0.5905568, -0.38959983)
+bones/8/rotation = Quaternion(0.4310339, -0.004817587, 0.029173244, 0.90185124)
+bones/9/rotation = Quaternion(-0.03912955, 0.07299243, 0.40327615, 0.91132283)
+bones/10/rotation = Quaternion(-0.16332546, 0.10884687, 0.0068689473, 0.98052543)
+bones/11/rotation = Quaternion(-0.062046513, 0.9975704, 0.030673143, -0.00791844)
+bones/12/rotation = Quaternion(-0.2479517, -0.013744223, -0.08979201, 0.96450436)
+bones/13/rotation = Quaternion(0.115584806, -0.016662233, 0.17277476, 0.978014)
+bones/15/rotation = Quaternion(0.6210345, -0.37543356, 0.56084085, 0.3985264)
+bones/16/rotation = Quaternion(0.38364375, 0.006711263, 0.20053604, 0.9014198)
+bones/17/rotation = Quaternion(0.0187919, 0.012666304, -0.36181858, 0.9319731)
+bones/18/rotation = Quaternion(0.10843527, 0.040411297, -0.09931656, 0.98830414)
+bones/19/rotation = Quaternion(-0.022352418, 0.9766178, 0.034219205, -0.21106185)
+bones/20/rotation = Quaternion(-0.10537558, -0.0016309709, -0.08657557, 0.99065536)
+bones/21/rotation = Quaternion(0.09595667, 0.0024868846, 0.0519007, 0.9940285)
+bones/23/rotation = Quaternion(0.06633656, 0.2098222, 0.97116345, -0.09173698)
+bones/24/rotation = Quaternion(-0.3061844, 0.12170517, -0.006522116, 0.944138)
+bones/25/rotation = Quaternion(0.43921286, -0.1152926, 0.06669305, 0.88845474)
+bones/26/rotation = Quaternion(0.36755028, -0.11005477, 0.021550016, 0.9232174)
+bones/28/rotation = Quaternion(-0.11718243, -0.002438519, 0.98659545, 0.11354237)
+bones/29/rotation = Quaternion(-0.2914497, 0.075275086, -0.047303915, 0.95244586)
+bones/30/rotation = Quaternion(0.5537467, 0.16731645, 0.018670542, 0.8154884)
+bones/31/rotation = Quaternion(0.35307115, 0.13081987, -0.046361744, 0.92524457)
+
+[node name="Meshy_AI_Crimson_Titan_0816011859_texture" parent="SubViewport/Meshy_AI_Crimson_Titan_0816011859_texture2/Skeleton3D" index="0" unique_id=1458311397]
+surface_material_override/0 = SubResource("StandardMaterial3D_fkybt")
+
+[node name="AnimationPlayer" parent="SubViewport/Meshy_AI_Crimson_Titan_0816011859_texture2" index="1" unique_id=1387884794]
+libraries/ = SubResource("AnimationLibrary_f1ek2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=1471347891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017146515, 0.07914178, 0.1704919)
+sky_mode = 1
+
+[editable path="SubViewport/Meshy_AI_Crimson_Titan_0816011859_texture2"]
