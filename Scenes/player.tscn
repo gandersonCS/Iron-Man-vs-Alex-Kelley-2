@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://c4ofbtgn03k5j" path="res://Scripts/PlayerController.cs" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://ifs5clj04qlf" path="res://Assets/Meshy_AI_Crimson_Titan_0816011859_texture.fbx" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://i7jt5b5t7ff6" path="res://Assets/Meshy_AI_Crimson_Titan_0816011859_texture_obj/Meshy_AI_Crimson_Titan_0816011859_texture_obj/Meshy_AI_Crimson_Titan_0816011859_texture.png" id="3_6t5aa"]
-[ext_resource type="Animation" uid="uid://dds4bsrgyvahj" path="res://Assets/Animations/IronManAnims/fly1.res" id="4_tx1dd"]
+[ext_resource type="Animation" uid="uid://f33hlfyvfgyp" path="res://Assets/Animations/IronManAnims/fly1.res" id="4_tx1dd"]
 [ext_resource type="Animation" uid="uid://cc743ggl5s54o" path="res://Assets/Animations/IronManAnims/Walking.res" id="4_x3wgy"]
 [ext_resource type="Animation" uid="uid://b0g4jvd1sxqfw" path="res://Assets/Animations/IronManAnims/idle.res" id="5_3smsa"]
-[ext_resource type="Animation" uid="uid://bnmcegxif3fo3" path="res://Assets/Animations/IronManAnims/hurriKick.res" id="5_gymyn"]
+[ext_resource type="Animation" uid="uid://cpd1ygu3obpvl" path="res://Assets/Animations/IronManAnims/hurriKick.res" id="5_gymyn"]
 [ext_resource type="Animation" uid="uid://cye25rtq3b3pc" path="res://Assets/Animations/IronManAnims/jump.res" id="6_8erm5"]
 [ext_resource type="Animation" uid="uid://b8jv2cbc7ai2t" path="res://Assets/Animations/IronManAnims/run.res" id="6_f1ek2"]
 [ext_resource type="Animation" uid="uid://bm7vxacrusuk8" path="res://Assets/Animations/IronManAnims/standardRun.res" id="7_tx1dd"]
@@ -109,8 +109,11 @@ libraries/ = SubResource("AnimationLibrary_f1ek2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=1471347891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017146515, 0.07914178, 0.1704919)
+light_color = Color(0.6492297, 0.7652202, 1, 1)
+light_energy = 4.321
 light_indirect_energy = 2.363
 light_volumetric_fog_energy = 0.0
+light_angular_distance = 29.05
 sky_mode = 1
 
 [editable path="SubViewport/Meshy_AI_Crimson_Titan_0816011859_texture2"]
