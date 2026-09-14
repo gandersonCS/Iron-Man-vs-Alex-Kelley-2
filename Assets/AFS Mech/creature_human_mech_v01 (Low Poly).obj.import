@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chtigpqrii60j"
+path="res://.godot/imported/creature_human_mech_v01 (Low Poly).obj-caf4e574a27514205c91c5df6deb9759.mesh"
+
+[deps]
+
+files=["res://.godot/imported/creature_human_mech_v01 (Low Poly).obj-caf4e574a27514205c91c5df6deb9759.mesh"]
+
+source_file="res://Assets/AFS Mech/creature_human_mech_v01 (Low Poly).obj"
+dest_files=["res://.godot/imported/creature_human_mech_v01 (Low Poly).obj-caf4e574a27514205c91c5df6deb9759.mesh", "res://.godot/imported/creature_human_mech_v01 (Low Poly).obj-caf4e574a27514205c91c5df6deb9759.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

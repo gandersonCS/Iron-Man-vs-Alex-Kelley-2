@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ghera\\Desktop\\IMvsAK2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{431CDF93-17FA-45A1-8CA7-20B1F4C65397}|IMvAK2.csproj|c:\\users\\ghera\\desktop\\imvsak2\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{431CDF93-17FA-45A1-8CA7-20B1F4C65397}|IMvAK2.csproj|solutionrelative:scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\ghera\\Desktop\\IMvsAK2\\Scripts\\PlayerController.cs",
-              "RelativeDocumentMoniker": "Scripts\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\ghera\\Desktop\\IMvsAK2\\Scripts\\PlayerController.cs",
-              "RelativeToolTip": "Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAgwFkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T08:33:42.578Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

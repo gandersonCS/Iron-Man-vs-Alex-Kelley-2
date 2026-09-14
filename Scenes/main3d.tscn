@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b8fca3uykscs6"]
+
+[ext_resource type="PackedScene" uid="uid://dtj102fyyk4j6" path="res://Scenes/player3d.tscn" id="1_s3qmt"]
+
+[node name="main" type="Node3D" unique_id=889907692]
+
+[node name="Player" parent="." unique_id=948437844 instance=ExtResource("1_s3qmt")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=611760582]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.058445334, 1.6283264)
+projection = 1
+size = 2.492
