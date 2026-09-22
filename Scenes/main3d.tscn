@@ -1,12 +1,50 @@
 [gd_scene format=3 uid="uid://b8fca3uykscs6"]
 
+[ext_resource type="Script" uid="uid://c4ofbtgn03k5j" path="res://Scripts/PlayerController.cs" id="1_nnj57"]
 [ext_resource type="PackedScene" uid="uid://dtj102fyyk4j6" path="res://Scenes/player3d.tscn" id="1_s3qmt"]
 
-[node name="main" type="Node3D" unique_id=889907692]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_npjmm"]
+radius = 0.19140625
+height = 0.9998779
 
-[node name="Player" parent="." unique_id=948437844 instance=ExtResource("1_s3qmt")]
+[sub_resource type="BoxMesh" id="BoxMesh_npjmm"]
+size = Vector3(19.666992, 0.21191406, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bsd35"]
+size = Vector3(21.179932, 0.21582031, 1)
+
+[node name="main" type="Node3D" unique_id=889907692]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=611760582]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.058445334, 1.6283264)
 projection = 1
 size = 2.492
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1552785375]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+axis_lock_linear_z = true
+script = ExtResource("1_nnj57")
+jumpForce = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=579969564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50006104, 0)
+shape = SubResource("CapsuleShape3D_npjmm")
+
+[node name="PlayerModel" parent="Player" unique_id=689581494 instance=ExtResource("1_s3qmt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1434788929]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=173281330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1381836, -0.39404297, 0)
+mesh = SubResource("BoxMesh_npjmm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=958673464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12390137, -0.40014648, 0)
+shape = SubResource("BoxShape3D_bsd35")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1461692556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017386436, 0.5888598, 0)
+light_energy = 11.157
+shadow_enabled = true
+distance_fade_enabled = true
+area_size = Vector2(6.110817, 1)

@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c07ysywj103am"
-path="res://.godot/imported/Meshy_AI_Crimson_Sentinel_biped_Animation_Running_withSkin_1.png-7ee0ee63dd863af8be87961ffb7fa4e9.ctex"
+uid="uid://c4c1pqmhtikhw"
+path.s3tc="res://.godot/imported/EmisMapPenta.png-ba6de33f036ef85040443b9650ed67cd.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "6b43946ba05b5583aa5573f07ab612b6"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Meshy_AI_Crimson_Sentinel_biped/Meshy_AI_Crimson_Sentinel_biped/Meshy_AI_Crimson_Sentinel_biped_Animation_Running_withSkin_1.png"
-dest_files=["res://.godot/imported/Meshy_AI_Crimson_Sentinel_biped_Animation_Running_withSkin_1.png-7ee0ee63dd863af8be87961ffb7fa4e9.ctex"]
+source_file="res://Assets/Meshy_AI_Crimson_Sentinel_0910022452_texture_fbx/Meshy_AI_Crimson_Sentinel_0910022452_texture_fbx/EmisMapPenta.png"
+dest_files=["res://.godot/imported/EmisMapPenta.png-ba6de33f036ef85040443b9650ed67cd.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -26,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -40,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="IMvAK2"
-run/main_scene="uid://7bjw0funvpgw"
+run/main_scene="uid://b8fca3uykscs6"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
