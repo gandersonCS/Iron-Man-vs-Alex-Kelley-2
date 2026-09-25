@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMvAK2", "IMvAK2.csproj", "{431CDF93-17FA-45A1-8CA7-20B1F4C65397}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMvAK2", "IMvAK2.csproj", "{92B3CDD0-9171-49B4-B166-FBA37112A73E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{431CDF93-17FA-45A1-8CA7-20B1F4C65397}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{92B3CDD0-9171-49B4-B166-FBA37112A73E}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
