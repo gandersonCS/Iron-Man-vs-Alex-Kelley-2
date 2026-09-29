@@ -6,13 +6,12 @@ public partial class RepulsorArm : Node3D
     [Export] public PackedScene BulletScene;
 
     private Marker3D _muzzle;
-    private AnimationPlayer _animPlayer;
+    private AnimationTree _animTree;
 
     public override void _Ready()
     {
-        // The "../" tells the script to step up to the parent node, then look for the siblings
-        _muzzle = GetNode<Marker3D>("../Skeleton3D/BoneAttachment3D/Muzzle");
-        _animPlayer = GetNode<AnimationPlayer>("../AnimationPlayer");
+        _muzzle = GetNode<Marker3D>("Muzzle");
+        _animTree = GetNode<AnimationTree>("../AnimationTree");
     }
 
     public override void _Process(double delta)
@@ -25,27 +24,31 @@ public partial class RepulsorArm : Node3D
 
     private void Shoot()
     {
-        // 1. Play your visual recoil animation
-        // Find a snappy punch or blast animation from Mixamo and trigger it here
-        _animPlayer?.Play("Combat/Shoot");
+        // Tells the OneShot node to play the shoot animation once, overriding the upper body
+        if (_animTree != null)
+        {
+            _animTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+        }
 
         Camera3D cam = GetViewport().GetCamera3D();
+
+        // If any of these are missing, the bullet won't spawn!
         if (cam == null || BulletScene == null || _muzzle == null) return;
 
-        // 2. Cast a mathematical ray from the camera through the mouse cursor
+        // Project the mouse into 3D space
         Vector2 mousePos = GetViewport().GetMousePosition();
         Vector3 rayOrigin = cam.ProjectRayOrigin(mousePos);
         Vector3 rayNormal = cam.ProjectRayNormal(mousePos);
 
-        // 3. Calculate where that ray hits the Z=0 plane (the plane your character moves on)
+        // Find the Z=0 intersection
         float t = -rayOrigin.Z / rayNormal.Z;
         Vector3 targetPos = rayOrigin + rayNormal * t;
 
-        // 4. Instantiate and fire the bullet
+        // Fire the bullet
         Node3D bullet = BulletScene.Instantiate<Node3D>();
         GetTree().Root.AddChild(bullet);
 
-        // Snap the bullet to the hand bone, then point it mathematically at the mouse
+        // Snap bullet to our static muzzle and aim it at the mouse
         bullet.GlobalPosition = _muzzle.GlobalPosition;
         bullet.LookAt(targetPos, Vector3.Up);
     }

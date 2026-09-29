@@ -1,23 +1,25 @@
 [gd_scene format=3 uid="uid://de6efafn71wln"]
 
-[ext_resource type="Script" uid="uid://ct0tsd62fjwvs" path="res://Bullet.cs" id="1_xjght"]
+[ext_resource type="Script" uid="uid://ct0tsd62fjwvs" path="res://Scripts/Bullet.cs" id="1_xjght"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_npjmm"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_bsd35"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bsd35"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8ihs"]
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
+emission = Color(1, 1, 0.36078432, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_npjmm"]
+radius = 0.18658447
+height = 0.37316895
 
 [node name="Bullet" type="Area3D" unique_id=2131247032]
 script = ExtResource("1_xjght")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=543771360]
-transform = Transform3D(0.36125925, 0, 0, 0, 0.05320572, 0, 0, 0, 0.05351044, 0, 0, 0)
-shape = SubResource("BoxShape3D_npjmm")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1930052606]
-transform = Transform3D(0.36125925, 0, 0, 0, 0.05320572, 0, 0, 0, 0.05351044, 0, 0, 0)
-mesh = SubResource("BoxMesh_bsd35")
+transform = Transform3D(0.36125925, 0, 0, 0, -0.00056011847, -0.08782977, 0, 0.04960353, -0.0009917659, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bsd35")
 surface_material_override/0 = SubResource("StandardMaterial3D_p8ihs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=566403792]
+transform = Transform3D(-0.0060854084, 0.8582836, 0, -0.40483248, -0.012901646, 0, 0, 0, 4.381, -0.002473116, 3.7175603e-05, 0)
+shape = SubResource("CapsuleShape3D_npjmm")
